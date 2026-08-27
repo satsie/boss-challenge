@@ -1076,7 +1076,7 @@ const BossChallengeLanding = () => {
             <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {[
                         { name: 'Sangbida', image: 'sangbida.jpg', github: 'https://github.com/sangbida', fundedBy: 'Blockstream', fundedByUrl: 'https://blockstream.com/', project: 'Core Lightning', projectUrl: 'https://github.com/ElementsProject/lightning' },
-                        { name: 'Daniel', image: 'daniel.jpg', github: 'https://github.com/purplekarrot', fundedBy: 'ANNOUNCED SOON', fundedByUrl: null, project: 'Bitcoin Core', projectUrl: 'https://github.com/bitcoin/bitcoin' },
+                        { name: 'Daniel', image: 'daniel.jpg', github: 'https://github.com/purplekarrot', fundedBy: 'Spiral', fundedByUrl: 'https://spiral.xyz', project: 'Bitcoin Core', projectUrl: 'https://github.com/bitcoin/bitcoin' },
                         { name: 'Ben', image: 'ben.jpg', github: 'https://github.com/benalleng', fundedBy: 'Maelstrom', fundedByUrl: 'https://maelstrom.fund/bitcoin-grant-program/', project: 'PayJoin', projectUrl: 'https://github.com/payjoin/rust-payjoin/' },
                         { name: 'Zealsham', image: 'zealsham.jpg', github: 'https://github.com/zealsham/', fundedBy: '₿trust', fundedByUrl: 'https://btrust.tech', project: 'PayJoin', projectUrl: 'https://github.com/payjoin/rust-payjoin/' },
                         { name: 'MacGyver', image: 'macgyver.png', github: 'https://github.com/macgyver13', fundedBy: 'Maelstrom', fundedByUrl: 'https://maelstrom.fund/bitcoin-grant-program/', project: 'Silent Payments', projectUrl: 'https://silentpayments.xyz/' },
@@ -1086,7 +1086,7 @@ const BossChallengeLanding = () => {
                         { name: 'Chuks', image: 'chuks.jpg', github: 'https://github.com/chuksys', fundedBy: '₿trust', fundedByUrl: 'https://btrust.tech', project: 'LDK Node', projectUrl: 'https://github.com/lightningdevkit/ldk-node' },
                         { name: 'Elnosh', image: 'elnosh.jpg', github: 'https://github.com/elnosh', fundedBy: 'OpenSats and Chaincode', fundedByUrl: 'https://opensats.org', fundedByUrl2: 'https://chaincode.com', project: 'LDK and Channel Jamming Research', projectUrl: 'https://lightningdevkit.org/', projectUrl2: 'https://github.com/carlaKC/jam-ln/' },
                         { name: 'Martin', image: 'martin.png', github: 'https://github.com/martinsaposnic', fundedBy: 'Spiral', fundedByUrl: 'https://spiral.xyz/', project: 'LDK', projectUrl: 'https://github.com/lightningdevkit/rust-lightning' },
-                        { name: 'Ram', image: 'ram.jpg', github: 'https://github.com/pseudoramdom', fundedBy: 'ANNOUNCED SOON', fundedByUrl: null, project: 'Bitcoin Core', projectUrl: 'https://github.com/bitcoin/bitcoin' },
+                        { name: 'Ram', image: 'ram.jpg', github: 'https://github.com/pseudoramdom', fundedBy: 'localhost', fundedByUrl: 'https://lclhost.org', project: 'Bitcoin Core', projectUrl: 'https://github.com/bitcoin/bitcoin' },
                       ].map((alum) => <AlumniCard key={alum.name} alum={alum} />)}
                     </div>
                   </div>

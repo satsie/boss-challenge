@@ -1,6 +1,7 @@
 import './globals.css';
 import Script from 'next/script';
 import { archivo, barlowCondensed, plexMono } from './fonts';
+import { asset } from './asset';
 
 export const metadata = {
   metadataBase: new URL('https://bosschallenge.xyz'),
@@ -10,12 +11,12 @@ export const metadata = {
   // and a light ₿ with the browser's color scheme; favicon.ico covers browsers without SVG icons.
   icons: {
     icon: [
-      { url: '/favicon.svg', type: 'image/svg+xml' },
-      { url: '/favicon.ico', sizes: 'any' },
+      { url: asset('/favicon.svg'), type: 'image/svg+xml' },
+      { url: asset('/favicon.ico'), sizes: 'any' },
     ],
-    apple: '/apple-touch-icon.png',
+    apple: asset('/apple-touch-icon.png'),
   },
-  manifest: '/manifest.webmanifest',
+  manifest: asset('/manifest.webmanifest'),
   openGraph: {
     title: '₿OSS Challenge',
     description: '₿OSS Challenge - start your career in bitcoin open source',

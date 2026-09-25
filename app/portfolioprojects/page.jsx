@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 function Avatar({ username, avatarUrl, size = 44 }) {
   const initial = username.charAt(0).toUpperCase();
@@ -147,22 +148,22 @@ export default function PortfolioProjectsPage() {
         transition={{ duration: 0.5, ease: 'easeOut' }}
       >
         <div className="flex items-center justify-between px-5 sm:px-12 py-5">
-          <a href="/" className="font-ui font-extrabold text-lg md:text-xl leading-6 md:leading-6 whitespace-nowrap text-boss-text hover:text-boss-muted transition-colors">
+          <Link href="/" className="font-ui font-extrabold text-lg md:text-xl leading-6 md:leading-6 whitespace-nowrap text-boss-text hover:text-boss-muted transition-colors">
             ₿OSS Challenge
-          </a>
+          </Link>
           <div className="flex items-center gap-5 md:gap-8 text-sm md:text-base text-boss-muted">
-            <a href="/#about" className="hidden sm:inline hover:text-boss-text transition-colors">
+            <Link href="/#about" className="hidden sm:inline hover:text-boss-text transition-colors">
               About
-            </a>
-            <a href="/#alum" className="hidden sm:inline hover:text-boss-text transition-colors">
+            </Link>
+            <Link href="/#alum" className="hidden sm:inline hover:text-boss-text transition-colors">
               Alum
-            </a>
-            <a href="/#resources" className="hidden sm:inline hover:text-boss-text transition-colors">
+            </Link>
+            <Link href="/#resources" className="hidden sm:inline hover:text-boss-text transition-colors">
               Resources
-            </a>
-            <a href="/portfolioprojects" aria-current="page" className="whitespace-nowrap text-boss-text">
+            </Link>
+            <Link href="/portfolioprojects" aria-current="page" className="whitespace-nowrap text-boss-text">
               Portfolio Projects
-            </a>
+            </Link>
           </div>
         </div>
       </motion.nav>

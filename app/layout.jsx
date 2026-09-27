@@ -7,8 +7,8 @@ export const metadata = {
   metadataBase: new URL('https://bosschallenge.xyz'),
   title: '₿OSS Challenge',
   description: '₿OSS Challenge - start your career in bitcoin open source',
-  // Icons from docs/brand/favicon_new/export/favicon-btc. favicon.svg switches between a dark
-  // and a light ₿ with the browser's color scheme; favicon.ico covers browsers without SVG icons.
+  // favicon.svg switches between a dark and a light ₿ with the browser's color scheme;
+  // favicon.ico covers browsers without SVG icons.
   icons: {
     icon: [
       { url: asset('/favicon.svg'), type: 'image/svg+xml' },

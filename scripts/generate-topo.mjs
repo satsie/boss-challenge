@@ -1,6 +1,5 @@
 // Writes the topographic backgrounds to public/img/:
-//   hero-topo.svg — the hero map (seed 7 is the approved terrain, see
-//                   docs/brand/new_hero/design_handoff_hero/README.md)
+//   hero-topo.svg — the hero map (seed 7 is the approved terrain)
 //   topo-tile.svg — a seamless, repeating version for section backgrounds (no orange summit)
 import { writeFileSync } from 'node:fs';
 import { generateTopoSvg } from './topo-background.mjs';

@@ -7,7 +7,7 @@ module.exports = {
   ],
   theme: {
     extend: {
-      // Cold Storage palette — see docs/brand/cold-storage-palette.md
+      // Cold Storage palette; values live in CSS variables in app/globals.css
       colors: {
         boss: {
           bg: 'rgb(var(--boss-bg) / <alpha-value>)',

@@ -2,7 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Cold Storage palette — see docs/brand/cold-storage-palette.md */
+/* Cold Storage brand palette. Colors are stored as RGB channels so Tailwind's opacity modifiers
+   (e.g. bg-boss-bg/80) work. Orange is the single action color, kept to ~5% of any screen;
+   teal is reserved for code and data. */
 :root {
   --boss-bg: 11 14 18;            /* #0B0E12 Cold Storage */
   --boss-surface: 19 25 32;       /* #131920 Vault */

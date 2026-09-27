@@ -5,7 +5,7 @@ import { Archivo, Barlow_Condensed, IBM_Plex_Mono } from 'next/font/google';
 export const barlowCondensed = Barlow_Condensed({
   subsets: ['latin'],
   weight: ['500', '600', '700', '800'],
-  style: ['italic'],
+  style: ['normal', 'italic'],
   variable: '--font-barlow-condensed',
   display: 'swap',
 });

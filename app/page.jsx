@@ -438,6 +438,36 @@ const SectionHeading = ({ eyebrow, title, align = 'left' }) => (
   </div>
 );
 
+// Barlow Condensed has no ₿ glyph, so draw one: a real B with the two strokes added on top.
+// Offsets are in em from Barlow Bold's metrics (ascent 1.0, cap height 0.7). The span stays inline
+// so its box is the font's content area regardless of line-height. The italic B slants 7°, so its
+// strokes follow the stem (further right at the top, left at the baseline) and share the slant.
+const bitcoinStroke = 'absolute w-[0.06em] h-[0.0544em] bg-current';
+
+const bitcoinStrokePositions = {
+  upright: [
+    'left-[0.1em] top-[0.2656em]',
+    'left-[0.23em] top-[0.2656em]',
+    'left-[0.1em] top-[0.98em]',
+    'left-[0.23em] top-[0.98em]',
+  ],
+  italic: [
+    'left-[0.164em] top-[0.2656em] -skew-x-[7deg] origin-bottom',
+    'left-[0.294em] top-[0.2656em] -skew-x-[7deg] origin-bottom',
+    'left-[0.084em] top-[0.98em] -skew-x-[7deg] origin-top',
+    'left-[0.214em] top-[0.98em] -skew-x-[7deg] origin-top',
+  ],
+};
+
+const BitcoinB = ({ italic = false }) => (
+  <span className="relative">
+    B
+    {bitcoinStrokePositions[italic ? 'italic' : 'upright'].map((position) => (
+      <span key={position} aria-hidden="true" className={`${bitcoinStroke} ${position}`} />
+    ))}
+  </span>
+);
+
 const FadeIn = ({ delay = 0, className = '', children }) => (
   <motion.div
     className={className}
@@ -571,7 +601,7 @@ const BossChallengeLanding = () => {
           {/* Section Title */}
           <FadeIn delay={0.05}>
             <div className="text-center mb-16 md:mb-20">
-              <h2 className="text-[length:min(72px,calc((100vw_-_40px)/5.2))] md:text-[96px] lg:text-[120px] leading-[0.95] font-bold text-boss-bg">
+              <h2 className="text-[length:min(72px,calc((100vw_-_40px)/5.2))] md:text-[96px] lg:text-[120px] leading-[0.95] font-bold not-italic text-boss-bg">
                 ABOUT
               </h2>
             </div>
@@ -651,7 +681,7 @@ const BossChallengeLanding = () => {
         <div className="max-w-7xl mx-auto">
           <FadeIn delay={0.05}>
             <div className="text-center mb-12 md:mb-16">
-              <h2 className="text-[length:min(72px,calc((100vw_-_40px)/5.2))] md:text-[96px] lg:text-[120px] leading-[0.95] font-bold text-boss-text mb-4">
+              <h2 className="text-[length:min(72px,calc((100vw_-_40px)/5.2))] md:text-[96px] lg:text-[120px] leading-[0.95] font-bold not-italic text-boss-text mb-4">
                 HOW IT WORKS
               </h2>
               <p className="text-lg md:text-xl text-boss-muted max-w-3xl mx-auto">
@@ -812,7 +842,7 @@ const BossChallengeLanding = () => {
           <FadeIn delay={0.05}>
             <div className="text-center mb-16 md:mb-20">
 
-              <h2 className="text-[length:min(72px,calc((100vw_-_40px)/5.2))] md:text-[96px] lg:text-[120px] leading-[0.95] font-bold text-boss-bg mb-4">
+              <h2 className="text-[length:min(72px,calc((100vw_-_40px)/5.2))] md:text-[96px] lg:text-[120px] leading-[0.95] font-bold not-italic text-boss-bg mb-4">
                 TESTIMONIALS
               </h2>
               <p className="text-lg md:text-xl text-boss-bg/70 max-w-2xl mx-auto">
@@ -836,8 +866,8 @@ const BossChallengeLanding = () => {
           {/* Main Section Heading */}
           <FadeIn delay={0.05}>
             <div className="text-center mb-20">
-              <h2 className="text-[length:min(72px,calc((100vw_-_40px)/5.2))] md:text-[96px] lg:text-[120px] leading-[0.95] font-bold text-boss-text mb-4">
-                ₿OSS ALUMNI
+              <h2 className="text-[length:min(72px,calc((100vw_-_40px)/5.2))] md:text-[96px] lg:text-[120px] leading-[0.95] font-bold not-italic text-boss-text mb-4">
+                <BitcoinB />OSS ALUMNI
             </h2>
               <p className="text-lg md:text-xl text-boss-muted max-w-2xl mx-auto">
                 Meet the talented developers who have completed the challenge and are now contributing to bitcoin open source projects
@@ -997,7 +1027,7 @@ const BossChallengeLanding = () => {
                       <div className="flex-1 h-px bg-gradient-to-r from-transparent to-boss-line"></div>
                       <div className="flex items-center gap-3">
                         <span className="notch notch-sm inline-flex items-center justify-center px-3 h-10 bg-boss-surface border border-boss-line text-boss-code font-display font-bold text-lg">2025</span>
-                        <h3 className="text-2xl md:text-3xl font-bold text-boss-text">₿OSS Alumni</h3>
+                        <h3 className="text-2xl md:text-3xl font-bold text-boss-text"><BitcoinB italic />OSS Alumni</h3>
             </div>
                       <div className="flex-1 h-px bg-gradient-to-l from-transparent to-boss-line"></div>
         </div>
@@ -1036,7 +1066,7 @@ const BossChallengeLanding = () => {
                       <div className="flex-1 h-px bg-gradient-to-r from-transparent to-boss-line"></div>
                       <div className="flex items-center gap-3">
                         <span className="notch notch-sm inline-flex items-center justify-center px-3 h-10 bg-boss-surface border border-boss-line text-boss-code font-display font-bold text-lg">2024</span>
-                        <h3 className="text-2xl md:text-3xl font-bold text-boss-text">₿OSS Alumni</h3>
+                        <h3 className="text-2xl md:text-3xl font-bold text-boss-text"><BitcoinB italic />OSS Alumni</h3>
                     </div>
                       <div className="flex-1 h-px bg-gradient-to-l from-transparent to-boss-line"></div>
                   </div>
@@ -1068,7 +1098,7 @@ const BossChallengeLanding = () => {
         <div className="max-w-7xl mx-auto relative z-[1]">
           <FadeIn delay={0.05}>
             <div className="text-center mb-20">
-              <h2 className="text-[length:min(72px,calc((100vw_-_40px)/5.2))] md:text-[96px] lg:text-[120px] leading-[0.95] font-bold text-boss-bg mb-4">
+              <h2 className="text-[length:min(72px,calc((100vw_-_40px)/5.2))] md:text-[96px] lg:text-[120px] leading-[0.95] font-bold not-italic text-boss-bg mb-4">
                 LEARNING RESOURCES
               </h2>
               <p className="text-xl text-boss-bg/70">
@@ -1160,7 +1190,7 @@ const BossChallengeLanding = () => {
         <div className="max-w-7xl mx-auto relative z-[1]">
           <FadeIn delay={0.05}>
             <div className="text-center mb-20">
-              <h2 className="text-[length:min(72px,calc((100vw_-_40px)/5.2))] md:text-[96px] lg:text-[120px] leading-[0.95] font-bold text-boss-bg mb-6">
+              <h2 className="text-[length:min(72px,calc((100vw_-_40px)/5.2))] md:text-[96px] lg:text-[120px] leading-[0.95] font-bold not-italic text-boss-bg mb-6">
               ABOUT CHAINCODE
             </h2>
               <div className="w-24 h-px bg-gradient-to-r from-transparent via-boss-bg/30 to-transparent mx-auto"></div>

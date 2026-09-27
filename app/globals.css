@@ -44,7 +44,7 @@ h4 {
   font-family: var(--boss-font-display);
 }
 
-/* Barlow Condensed is loaded in italic only */
+/* Display type defaults to italic; use not-italic for upright headings */
 h1,
 h2,
 h3,

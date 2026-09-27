@@ -516,7 +516,7 @@ const BossChallengeLanding = () => {
       </div>
 
       <div className="relative flex-1 flex flex-col gap-4 max-w-[1100px] mx-5 py-10 min-[700px]:ml-28 min-[700px]:mr-12">
-        <p className="-mb-2 font-medium text-[length:clamp(14px,1.3vw,19px)] leading-none tracking-[0.16em] uppercase text-boss-muted">
+        <p className="mb-[clamp(8px,1.5vw,24px)] font-medium text-[length:clamp(14px,1.3vw,19px)] leading-none tracking-[0.16em] uppercase text-boss-muted">
           <a
             href="https://chaincode.com"
             target="_blank"
@@ -527,14 +527,14 @@ const BossChallengeLanding = () => {
           </a>{' '}
           presents
         </p>
-        {/* hero-logo.png has its transparent left edge trimmed so it aligns with the text below;
-            sized to the width the text headline had */}
+        {/* hero-logo.png is cropped to its content (no transparent border) so it aligns with the
+            text; sized to the width the text headline had */}
         <h1 className="w-full max-w-[455px] min-[700px]:max-w-none min-[700px]:w-[clamp(455px,53vw,730px)]">
           <Image
             src={asset('/img/hero-logo.png')}
             alt="BOSS Challenge 2027"
-            width={1812}
-            height={864}
+            width={1982}
+            height={963}
             priority
             className="w-full h-auto"
           />

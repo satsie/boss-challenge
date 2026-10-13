@@ -878,18 +878,19 @@ const BossChallengeLanding = () => {
           {/* Alumni Card Component */}
           {(() => {
             const AlumniCard = ({ alum }) => (
+              <div className="relative">
+                {/* Cohort Year Stamp (outside the card, which clips to its notch) */}
+                <span className="absolute -top-4 -left-4 z-10 flex flex-col items-center justify-center gap-0.5 w-16 h-16 rounded-full -rotate-12 bg-boss-bg border border-boss-code/50 text-boss-code font-display font-bold leading-none">
+                  <span className="text-base">{alum.year}</span>
+                  <span className="text-[9px] tracking-widest">COHORT</span>
+                </span>
                 <div
-                  key={alum.name}
                   onClick={() => window.open(alum.github, '_blank')}
-                  className="notch notch-lg notch-border group block border border-boss-line bg-boss-surface p-6 hover:border-boss-muted hover:[--notch-line:rgb(var(--boss-muted))] transition-colors cursor-pointer"
+                  className="notch notch-lg notch-border group block h-full border border-boss-line bg-boss-surface px-6 pt-8 pb-4 hover:border-boss-muted hover:[--notch-line:rgb(var(--boss-muted))] transition-colors cursor-pointer"
                 >
-                  {/* Cohort Year Tag */}
-                  <span className="notch notch-sm absolute top-4 left-4 inline-flex items-center px-2 py-0.5 bg-boss-bg border border-boss-line text-boss-code font-display font-bold text-xs">
-                    {alum.year}
-                  </span>
                   <div className="flex flex-col items-center gap-4 text-center">
                     {/* Profile Image */}
-                    <div className="notch relative w-32 h-32 overflow-hidden bg-boss-line">
+                    <div className="notch relative w-36 h-36 overflow-hidden bg-boss-line">
                       <Image
                         src={asset(`/img/boss-alum/${alum.image}`)}
                         alt={alum.name}
@@ -898,9 +899,9 @@ const BossChallengeLanding = () => {
                       />
                     </div>
                     {/* Name and Info */}
-                  <div className="space-y-2 w-full">
+                  <div className="space-y-3 w-full">
                       <div className="flex items-center justify-center gap-2">
-                        <h3 className="text-lg font-bold text-boss-text">{alum.name}</h3>
+                        <h3 className="text-2xl leading-7 font-bold not-italic text-boss-text">{alum.name}</h3>
                         
                       {/* Social Icons */}
                         <span 
@@ -928,7 +929,7 @@ const BossChallengeLanding = () => {
                         )}
                       </div>
 
-                      <p className="text-xs text-boss-muted leading-relaxed">
+                      <p className="text-sm text-boss-muted leading-relaxed">
                       {(() => {
                         // Handle funding info
                         let fundingContent;
@@ -936,51 +937,51 @@ const BossChallengeLanding = () => {
                           fundingContent = (
                             <>
                               Funded by{' '}
-                              <a href={alum.fundedByUrl} target="_blank" rel="noopener noreferrer" className="text-boss-code font-semibold hover:underline" onClick={(e) => e.stopPropagation()}>BDK Foundation</a>
+                              <a href={alum.fundedByUrl} target="_blank" rel="noopener noreferrer" className="text-boss-code font-semibold hover:underline whitespace-nowrap" onClick={(e) => e.stopPropagation()}>BDK Foundation</a>
                             {', '}
-                              <a href={alum.fundedByUrl2} target="_blank" rel="noopener noreferrer" className="text-boss-code font-semibold hover:underline" onClick={(e) => e.stopPropagation()}>OpenSats</a>
+                              <a href={alum.fundedByUrl2} target="_blank" rel="noopener noreferrer" className="text-boss-code font-semibold hover:underline whitespace-nowrap" onClick={(e) => e.stopPropagation()}>OpenSats</a>
                             {', and '}
-                              <a href={alum.fundedByUrl3} target="_blank" rel="noopener noreferrer" className="text-boss-code font-semibold hover:underline" onClick={(e) => e.stopPropagation()}>2140</a>
+                              <a href={alum.fundedByUrl3} target="_blank" rel="noopener noreferrer" className="text-boss-code font-semibold hover:underline whitespace-nowrap" onClick={(e) => e.stopPropagation()}>2140</a>
                             </>
                           );
                         } else if (alum.name === 'David') {
                           fundingContent = (
                             <>
                               Funded by{' '}
-                              <a href={alum.fundedByUrl} target="_blank" rel="noopener noreferrer" className="text-boss-code font-semibold hover:underline" onClick={(e) => e.stopPropagation()}>OpenSats</a>
+                              <a href={alum.fundedByUrl} target="_blank" rel="noopener noreferrer" className="text-boss-code font-semibold hover:underline whitespace-nowrap" onClick={(e) => e.stopPropagation()}>OpenSats</a>
                             {' and '}
-                              <a href={alum.fundedByUrl2} target="_blank" rel="noopener noreferrer" className="text-boss-code font-semibold hover:underline" onClick={(e) => e.stopPropagation()}>localhost</a>
+                              <a href={alum.fundedByUrl2} target="_blank" rel="noopener noreferrer" className="text-boss-code font-semibold hover:underline whitespace-nowrap" onClick={(e) => e.stopPropagation()}>localhost</a>
                             </>
                           );
                         } else if (alum.name === 'Elnosh') {
                           fundingContent = (
                             <>
                               Funded by{' '}
-                              <a href={alum.fundedByUrl} target="_blank" rel="noopener noreferrer" className="text-boss-code font-semibold hover:underline" onClick={(e) => e.stopPropagation()}>OpenSats</a>
+                              <a href={alum.fundedByUrl} target="_blank" rel="noopener noreferrer" className="text-boss-code font-semibold hover:underline whitespace-nowrap" onClick={(e) => e.stopPropagation()}>OpenSats</a>
                               {' and '}
-                              <a href={alum.fundedByUrl2} target="_blank" rel="noopener noreferrer" className="text-boss-code font-semibold hover:underline" onClick={(e) => e.stopPropagation()}>Chaincode</a>
+                              <a href={alum.fundedByUrl2} target="_blank" rel="noopener noreferrer" className="text-boss-code font-semibold hover:underline whitespace-nowrap" onClick={(e) => e.stopPropagation()}>Chaincode</a>
                             </>
                           );
                         } else if (alum.name === 'Beulah') {
                           fundingContent = (
                             <>
                               Funded by{' '}
-                              <a href={alum.fundedByUrl} target="_blank" rel="noopener noreferrer" className="text-boss-code font-semibold hover:underline" onClick={(e) => e.stopPropagation()}>Vora</a>
+                              <a href={alum.fundedByUrl} target="_blank" rel="noopener noreferrer" className="text-boss-code font-semibold hover:underline whitespace-nowrap" onClick={(e) => e.stopPropagation()}>Vora</a>
                               {' and '}
-                              <a href={alum.fundedByUrl2} target="_blank" rel="noopener noreferrer" className="text-boss-code font-semibold hover:underline" onClick={(e) => e.stopPropagation()}>Second</a>
+                              <a href={alum.fundedByUrl2} target="_blank" rel="noopener noreferrer" className="text-boss-code font-semibold hover:underline whitespace-nowrap" onClick={(e) => e.stopPropagation()}>Second</a>
                             </>
                           );
                         } else if (alum.fundedByUrl) {
                           fundingContent = (
                             <>
                               Funded by{' '}
-                              <a href={alum.fundedByUrl} target="_blank" rel="noopener noreferrer" className="text-boss-code font-semibold hover:underline" onClick={(e) => e.stopPropagation()}>{alum.fundedBy}</a>
+                              <a href={alum.fundedByUrl} target="_blank" rel="noopener noreferrer" className="text-boss-code font-semibold hover:underline whitespace-nowrap" onClick={(e) => e.stopPropagation()}>{alum.fundedBy}</a>
                             </>
                           );
                         } else {
                           fundingContent = (
                             <>
-                              Funded by <span className="text-boss-code font-semibold">{alum.fundedBy}</span>
+                              Funded by <span className="text-boss-code font-semibold whitespace-nowrap">{alum.fundedBy}</span>
                             </>
                           );
                         }
@@ -990,36 +991,37 @@ const BossChallengeLanding = () => {
                         if (alum.name === 'Rob') {
                           projectContent = (
                             <>
-                        {' to contribute to '}
-                              <a href={alum.projectUrl} target="_blank" rel="noopener noreferrer" className="font-semibold text-boss-text hover:underline" onClick={(e) => e.stopPropagation()}>BDK</a>
+                        Contributing to{' '}
+                              <a href={alum.projectUrl} target="_blank" rel="noopener noreferrer" className="font-semibold text-boss-text hover:underline whitespace-nowrap" onClick={(e) => e.stopPropagation()}>BDK</a>
                               {' and '}
-                              <a href={alum.projectUrl2} target="_blank" rel="noopener noreferrer" className="font-semibold text-boss-text hover:underline" onClick={(e) => e.stopPropagation()}>kyoto</a>
+                              <a href={alum.projectUrl2} target="_blank" rel="noopener noreferrer" className="font-semibold text-boss-text hover:underline whitespace-nowrap" onClick={(e) => e.stopPropagation()}>kyoto</a>
                             </>
                           );
                         } else if (alum.name === 'Elnosh') {
                           projectContent = (
                             <>
-                              {' to contribute to '}
-                              <a href={alum.projectUrl} target="_blank" rel="noopener noreferrer" className="font-semibold text-boss-text hover:underline" onClick={(e) => e.stopPropagation()}>LDK</a>
+                              Contributing to{' '}
+                              <a href={alum.projectUrl} target="_blank" rel="noopener noreferrer" className="font-semibold text-boss-text hover:underline whitespace-nowrap" onClick={(e) => e.stopPropagation()}>LDK</a>
                             {' and '}
-                              <a href={alum.projectUrl2} target="_blank" rel="noopener noreferrer" className="font-semibold text-boss-text hover:underline" onClick={(e) => e.stopPropagation()}>Channel Jamming Research</a>
+                              <a href={alum.projectUrl2} target="_blank" rel="noopener noreferrer" className="font-semibold text-boss-text hover:underline whitespace-nowrap" onClick={(e) => e.stopPropagation()}>Channel Jamming Research</a>
                             </>
                           );
                         } else {
                           projectContent = (
                             <>
-                              {' to contribute to '}
-                              <a href={alum.projectUrl} target="_blank" rel="noopener noreferrer" className="font-semibold text-boss-text hover:underline" onClick={(e) => e.stopPropagation()}>{alum.project}</a>
+                              Contributing to{' '}
+                              <a href={alum.projectUrl} target="_blank" rel="noopener noreferrer" className="font-semibold text-boss-text hover:underline whitespace-nowrap" onClick={(e) => e.stopPropagation()}>{alum.project}</a>
                             </>
                           );
                         }
 
-                        return <>{fundingContent}{projectContent}</>;
+                        return <>{projectContent}.<br />{fundingContent}.</>;
                       })()}
                 </p>
               </div>
                   </div>
                 </div>
+              </div>
             );
 
             return (

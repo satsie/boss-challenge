@@ -883,6 +883,10 @@ const BossChallengeLanding = () => {
                   onClick={() => window.open(alum.github, '_blank')}
                   className="notch notch-lg notch-border group block border border-boss-line bg-boss-surface p-6 hover:border-boss-muted hover:[--notch-line:rgb(var(--boss-muted))] transition-colors cursor-pointer"
                 >
+                  {/* Cohort Year Tag */}
+                  <span className="notch notch-sm absolute top-4 left-4 inline-flex items-center px-2 py-0.5 bg-boss-bg border border-boss-line text-boss-code font-display font-bold text-xs">
+                    {alum.year}
+                  </span>
                   <div className="flex flex-col items-center gap-4 text-center">
                     {/* Profile Image */}
                     <div className="notch relative w-32 h-32 overflow-hidden bg-boss-line">
@@ -1019,72 +1023,32 @@ const BossChallengeLanding = () => {
             );
 
             return (
-              <>
-                {/* 2025 Alumni Subsection */}
                 <FadeIn delay={0.1}>
-                  <div className="mb-20">
-                    <div className="flex items-center gap-4 mb-8">
-                      <div className="flex-1 h-px bg-gradient-to-r from-transparent to-boss-line"></div>
-                      <div className="flex items-center gap-3">
-                        <span className="notch notch-sm inline-flex items-center justify-center px-3 h-10 bg-boss-surface border border-boss-line text-boss-code font-display font-bold text-lg">2025</span>
-                        <h3 className="text-2xl md:text-3xl font-bold text-boss-text"><BitcoinB italic />OSS Alumni</h3>
-            </div>
-                      <div className="flex-1 h-px bg-gradient-to-l from-transparent to-boss-line"></div>
-        </div>
-            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-              {[
-                        { name: 'Sangbida', image: 'sangbida.jpg', github: 'https://github.com/sangbida', fundedBy: 'Blockstream', fundedByUrl: 'https://blockstream.com/', project: 'Core Lightning', projectUrl: 'https://github.com/ElementsProject/lightning' },
-                        { name: 'Daniel', image: 'daniel.jpg', github: 'https://github.com/purplekarrot', fundedBy: 'Spiral', fundedByUrl: 'https://spiral.xyz', project: 'Bitcoin Core', projectUrl: 'https://github.com/bitcoin/bitcoin' },
-                        { name: 'Ben', image: 'ben.jpg', github: 'https://github.com/benalleng', fundedBy: 'Maelstrom', fundedByUrl: 'https://maelstrom.fund/bitcoin-grant-program/', project: 'PayJoin', projectUrl: 'https://github.com/payjoin/rust-payjoin/' },
-                        { name: 'Zealsham', image: 'zealsham.jpg', github: 'https://github.com/zealsham/', fundedBy: '₿trust', fundedByUrl: 'https://btrust.tech', project: 'PayJoin', projectUrl: 'https://github.com/payjoin/rust-payjoin/' },
-                        { name: 'MacGyver', image: 'macgyver.png', github: 'https://github.com/macgyver13', fundedBy: 'Maelstrom', fundedByUrl: 'https://maelstrom.fund/bitcoin-grant-program/', project: 'Silent Payments', projectUrl: 'https://silentpayments.xyz/' },
-                        { name: 'Beulah', image: 'beulah.jpg', github: 'https://github.com/BEULAHEVANJALIN', fundedBy: 'Vora and Second', fundedByUrl: 'https://vora.io', fundedByUrl2: 'https://second.tech', project: 'FROST', projectUrl: 'https://github.com/BEULAHEVANJALIN/frost-td-prework' },
-                        { name: 'Rita', image: 'rita.jpg', github: 'https://github.com/camillarhi', fundedBy: '₿trust', fundedByUrl: 'https://btrust.tech', project: 'LDK Node', projectUrl: 'https://github.com/lightningdevkit/ldk-node' },
-                        { name: 'Janb84', image: 'janb.png', github: 'https://github.com/janb84', fundedBy: 'OpenSats', fundedByUrl: 'https://opensats.org', project: 'Bitcoin Core', projectUrl: 'https://github.com/bitcoin/bitcoin' },
-                        { name: 'Chuks', image: 'chuks.jpg', github: 'https://github.com/chuksys', fundedBy: '₿trust', fundedByUrl: 'https://btrust.tech', project: 'LDK Node', projectUrl: 'https://github.com/lightningdevkit/ldk-node' },
-                        { name: 'Elnosh', image: 'elnosh.jpg', github: 'https://github.com/elnosh', fundedBy: 'OpenSats and Chaincode', fundedByUrl: 'https://opensats.org', fundedByUrl2: 'https://chaincode.com', project: 'LDK and Channel Jamming Research', projectUrl: 'https://lightningdevkit.org/', projectUrl2: 'https://github.com/carlaKC/jam-ln/' },
-                        { name: 'Martin', image: 'martin.png', github: 'https://github.com/martinsaposnic', fundedBy: 'Spiral', fundedByUrl: 'https://spiral.xyz/', project: 'LDK', projectUrl: 'https://github.com/lightningdevkit/rust-lightning' },
-                        { name: 'Ram', image: 'ram.jpg', github: 'https://github.com/pseudoramdom', fundedBy: 'localhost', fundedByUrl: 'https://lclhost.org', project: 'Bitcoin Core', projectUrl: 'https://github.com/bitcoin/bitcoin' },
-                      ].map((alum) => <AlumniCard key={alum.name} alum={alum} />)}
-                    </div>
+                  <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                    {[
+                      { year: 2025, name: 'Sangbida', image: 'sangbida.jpg', github: 'https://github.com/sangbida', fundedBy: 'Blockstream', fundedByUrl: 'https://blockstream.com/', project: 'Core Lightning', projectUrl: 'https://github.com/ElementsProject/lightning' },
+                      { year: 2025, name: 'Daniel', image: 'daniel.jpg', github: 'https://github.com/purplekarrot', fundedBy: 'Spiral', fundedByUrl: 'https://spiral.xyz', project: 'Bitcoin Core', projectUrl: 'https://github.com/bitcoin/bitcoin' },
+                      { year: 2025, name: 'Ben', image: 'ben.jpg', github: 'https://github.com/benalleng', fundedBy: 'Maelstrom', fundedByUrl: 'https://maelstrom.fund/bitcoin-grant-program/', project: 'PayJoin', projectUrl: 'https://github.com/payjoin/rust-payjoin/' },
+                      { year: 2025, name: 'Zealsham', image: 'zealsham.jpg', github: 'https://github.com/zealsham/', fundedBy: '₿trust', fundedByUrl: 'https://btrust.tech', project: 'PayJoin', projectUrl: 'https://github.com/payjoin/rust-payjoin/' },
+                      { year: 2025, name: 'MacGyver', image: 'macgyver.png', github: 'https://github.com/macgyver13', fundedBy: 'Maelstrom', fundedByUrl: 'https://maelstrom.fund/bitcoin-grant-program/', project: 'Silent Payments', projectUrl: 'https://silentpayments.xyz/' },
+                      { year: 2025, name: 'Beulah', image: 'beulah.jpg', github: 'https://github.com/BEULAHEVANJALIN', fundedBy: 'Vora and Second', fundedByUrl: 'https://vora.io', fundedByUrl2: 'https://second.tech', project: 'FROST', projectUrl: 'https://github.com/BEULAHEVANJALIN/frost-td-prework' },
+                      { year: 2025, name: 'Rita', image: 'rita.jpg', github: 'https://github.com/camillarhi', fundedBy: '₿trust', fundedByUrl: 'https://btrust.tech', project: 'LDK Node', projectUrl: 'https://github.com/lightningdevkit/ldk-node' },
+                      { year: 2025, name: 'Janb84', image: 'janb.png', github: 'https://github.com/janb84', fundedBy: 'OpenSats', fundedByUrl: 'https://opensats.org', project: 'Bitcoin Core', projectUrl: 'https://github.com/bitcoin/bitcoin' },
+                      { year: 2025, name: 'Chuks', image: 'chuks.jpg', github: 'https://github.com/chuksys', fundedBy: '₿trust', fundedByUrl: 'https://btrust.tech', project: 'LDK Node', projectUrl: 'https://github.com/lightningdevkit/ldk-node' },
+                      { year: 2025, name: 'Elnosh', image: 'elnosh.jpg', github: 'https://github.com/elnosh', fundedBy: 'OpenSats and Chaincode', fundedByUrl: 'https://opensats.org', fundedByUrl2: 'https://chaincode.com', project: 'LDK and Channel Jamming Research', projectUrl: 'https://lightningdevkit.org/', projectUrl2: 'https://github.com/carlaKC/jam-ln/' },
+                      { year: 2025, name: 'Martin', image: 'martin.png', github: 'https://github.com/martinsaposnic', fundedBy: 'Spiral', fundedByUrl: 'https://spiral.xyz/', project: 'LDK', projectUrl: 'https://github.com/lightningdevkit/rust-lightning' },
+                      { year: 2025, name: 'Ram', image: 'ram.jpg', github: 'https://github.com/pseudoramdom', fundedBy: 'localhost', fundedByUrl: 'https://lclhost.org', project: 'Bitcoin Core', projectUrl: 'https://github.com/bitcoin/bitcoin' },
+                      { year: 2024, name: 'Nick', image: 'nick.png', github: 'https://github.com/nyonson', blog: 'https://blog.yonson.dev', fundedBy: 'Spiral', fundedByUrl: 'https://spiral.xyz/', project: 'Rust Bitcoin', projectUrl: 'https://github.com/rust-bitcoin/' },
+                      { year: 2024, name: 'Rob', image: 'rob.jpg', github: 'https://github.com/rustaceanrob', fundedBy: 'BDK Foundation, OpenSats, and 2140', fundedByUrl: 'https://bitcoindevkit.org/', fundedByUrl2: 'https://opensats.org', fundedByUrl3: 'https://2140.dev', project: 'BDK and kyoto', projectUrl: 'https://bitcoindevkit.org/', projectUrl2: 'https://github.com/rustaceanrob/kyoto' },
+                      { year: 2024, name: 'David', image: 'david.jpg', github: 'https://github.com/davidgumberg', fundedBy: 'OpenSats and localhost', fundedByUrl: 'https://opensats.org', fundedByUrl2: 'https://lclhost.org/', project: 'Bitcoin Core', projectUrl: 'https://github.com/bitcoin/bitcoin' },
+                      { year: 2024, name: 'Rkrux', image: 'rkrux.jpg', github: 'https://github.com/rkrux', fundedBy: 'Maelstrom', fundedByUrl: 'https://maelstrom.fund/bitcoin-grant-program/', project: 'Bitcoin Core', projectUrl: 'https://github.com/bitcoin/bitcoin' },
+                      { year: 2024, name: 'Hodlinator', image: 'hodlinator.jpg', github: 'https://github.com/Hodlinator/', fundedBy: 'OpenSats', fundedByUrl: 'https://opensats.org', project: 'Bitcoin Core', projectUrl: 'https://github.com/bitcoin/bitcoin' },
+                      { year: 2024, name: 'Tdb3', image: 'tdb3.png', github: 'https://github.com/tdb3', fundedBy: 'OpenSats', fundedByUrl: 'https://opensats.org', project: 'Bitcoin Core', projectUrl: 'https://github.com/bitcoin/bitcoin' },
+                      { year: 2024, name: 'Spacebear', image: 'spacebear.png', github: 'https://github.com/spacebear21', fundedBy: 'Spiral', fundedByUrl: 'https://spiral.xyz/', project: 'PayJoin', projectUrl: 'https://github.com/payjoin/rust-payjoin/' },
+                      { year: 2024, name: 'Marco', image: 'marco.jpg', github: 'https://github.com/marcofleon', fundedBy: 'Brink', fundedByUrl: 'https://brink.dev', project: 'Bitcoin Core', projectUrl: 'https://github.com/bitcoin/bitcoin' },
+                    ].map((alum) => <AlumniCard key={alum.name} alum={alum} />)}
                   </div>
                 </FadeIn>
-
-                {/* Divider between years */}
-                <div className="my-16 flex items-center justify-center">
-                  <div className="flex items-center gap-4 w-full max-w-2xl">
-                    <div className="flex-1 h-px bg-gradient-to-r from-transparent to-boss-line"></div>
-                    <div className="w-2 h-2 rotate-45 bg-boss-line"></div>
-                    <div className="flex-1 h-px bg-gradient-to-l from-transparent to-boss-line"></div>
-                  </div>
-                      </div>
-
-                {/* 2024 Alumni Subsection */}
-                <FadeIn delay={0.15}>
-                  <div>
-                    <div className="flex items-center gap-4 mb-8">
-                      <div className="flex-1 h-px bg-gradient-to-r from-transparent to-boss-line"></div>
-                      <div className="flex items-center gap-3">
-                        <span className="notch notch-sm inline-flex items-center justify-center px-3 h-10 bg-boss-surface border border-boss-line text-boss-code font-display font-bold text-lg">2024</span>
-                        <h3 className="text-2xl md:text-3xl font-bold text-boss-text"><BitcoinB italic />OSS Alumni</h3>
-                    </div>
-                      <div className="flex-1 h-px bg-gradient-to-l from-transparent to-boss-line"></div>
-                  </div>
-                    <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                      {[
-                        { name: 'Nick', image: 'nick.png', github: 'https://github.com/nyonson', blog: 'https://blog.yonson.dev', fundedBy: 'Spiral', fundedByUrl: 'https://spiral.xyz/', project: 'Rust Bitcoin', projectUrl: 'https://github.com/rust-bitcoin/' },
-                        { name: 'Rob', image: 'rob.jpg', github: 'https://github.com/rustaceanrob', fundedBy: 'BDK Foundation, OpenSats, and 2140', fundedByUrl: 'https://bitcoindevkit.org/', fundedByUrl2: 'https://opensats.org', fundedByUrl3: 'https://2140.dev', project: 'BDK and kyoto', projectUrl: 'https://bitcoindevkit.org/', projectUrl2: 'https://github.com/rustaceanrob/kyoto' },
-                        { name: 'David', image: 'david.jpg', github: 'https://github.com/davidgumberg', fundedBy: 'OpenSats and localhost', fundedByUrl: 'https://opensats.org', fundedByUrl2: 'https://lclhost.org/', project: 'Bitcoin Core', projectUrl: 'https://github.com/bitcoin/bitcoin' },
-                        { name: 'Rkrux', image: 'rkrux.jpg', github: 'https://github.com/rkrux', fundedBy: 'Maelstrom', fundedByUrl: 'https://maelstrom.fund/bitcoin-grant-program/', project: 'Bitcoin Core', projectUrl: 'https://github.com/bitcoin/bitcoin' },
-                        { name: 'Hodlinator', image: 'hodlinator.jpg', github: 'https://github.com/Hodlinator/', fundedBy: 'OpenSats', fundedByUrl: 'https://opensats.org', project: 'Bitcoin Core', projectUrl: 'https://github.com/bitcoin/bitcoin' },
-                        { name: 'Tdb3', image: 'tdb3.png', github: 'https://github.com/tdb3', fundedBy: 'OpenSats', fundedByUrl: 'https://opensats.org', project: 'Bitcoin Core', projectUrl: 'https://github.com/bitcoin/bitcoin' },
-                        { name: 'Spacebear', image: 'spacebear.png', github: 'https://github.com/spacebear21', fundedBy: 'Spiral', fundedByUrl: 'https://spiral.xyz/', project: 'PayJoin', projectUrl: 'https://github.com/payjoin/rust-payjoin/' },
-                        { name: 'Marco', image: 'marco.jpg', github: 'https://github.com/marcofleon', fundedBy: 'Brink', fundedByUrl: 'https://brink.dev', project: 'Bitcoin Core', projectUrl: 'https://github.com/bitcoin/bitcoin' },
-                      ].map((alum) => <AlumniCard key={alum.name} alum={alum} />)}
-                </div>
-            </div>
-          </FadeIn>
-              </>
             );
           })()}
         </div>

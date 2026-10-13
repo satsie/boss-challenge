@@ -245,7 +245,7 @@ const TestimonialVideos = () => {
                 {/* Quote */}
                 {testimonial.quote && (
                   <p className="text-boss-bg/70 text-xs italic mb-3 line-clamp-2">
-                    "{testimonial.quote}"
+                    &quot;{testimonial.quote}&quot;
                   </p>
                 )}
                 
@@ -362,7 +362,7 @@ const TestimonialVideos = () => {
               {/* Quote */}
               {activeVideo.quote && (
                 <p className="text-boss-text text-lg italic mb-4">
-                  "{activeVideo.quote}"
+                  &quot;{activeVideo.quote}&quot;
                 </p>
               )}
               
@@ -616,7 +616,7 @@ const BossChallengeLanding = () => {
                 {/* First paragraph with emphasis */}
                 <div className="relative">
                   <p className="font-ui text-base md:text-lg text-boss-bg/70 leading-relaxed">
-                    It's no secret that getting started in ₿OSS (Bitcoin Open Source Software) can be difficult. Sometimes it's not obvious where to begin, and other times it takes an extra nudge. No matter the situation, the <span className="font-semibold text-boss-bg">₿OSS Challenge is ready to tackle obstacles</span> like these by providing guidance and scaffolding for the journey.
+                    It&apos;s no secret that getting started in ₿OSS (Bitcoin Open Source Software) can be difficult. Sometimes it&apos;s not obvious where to begin, and other times it takes an extra nudge. No matter the situation, the <span className="font-semibold text-boss-bg">₿OSS Challenge is ready to tackle obstacles</span> like these by providing guidance and scaffolding for the journey.
                   </p>
                 </div>
 
@@ -722,7 +722,7 @@ const BossChallengeLanding = () => {
                 {/* Description */}
                 <p className="font-ui text-base text-boss-muted leading-relaxed">
                   {/* Chaincode curates each cohort, arranges curriculum, and provides ongoing support. Expect to prep for <strong className="text-boss-text font-semibold">minimum 10 hours per week</strong>. Taught and mentored by ₿OSS contributors with async chat discussions and support throughout. */}
-                  Chaincode curates each cohort, arranges curriculum, and provides ongoing support throughout the program. You will be expected to prep for a  <strong className="text-boss-text font-semibold">minimum 10 hours per week</strong>. Outside of the first week, there are no scheduled calls. This program will be taught and mentored by ₿OSS contributors that have stood in your shoes. Throughout the week, there will be async chat discussions and support. If you are willing to do the work, we'll give you what you need to get to where you want to go.
+                  Chaincode curates each cohort, arranges curriculum, and provides ongoing support throughout the program. You will be expected to prep for a  <strong className="text-boss-text font-semibold">minimum 10 hours per week</strong>. Outside of the first week, there are no scheduled calls. This program will be taught and mentored by ₿OSS contributors that have stood in your shoes. Throughout the week, there will be async chat discussions and support. If you are willing to do the work, we&apos;ll give you what you need to get to where you want to go.
                 </p>
               </div>
             </FadeIn>

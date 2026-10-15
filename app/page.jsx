@@ -880,9 +880,8 @@ const BossChallengeLanding = () => {
             const AlumniCard = ({ alum }) => (
               <div className="relative">
                 {/* Cohort Year Stamp (outside the card, which clips to its notch) */}
-                <span className="absolute -top-4 -left-4 z-10 flex flex-col items-center justify-center gap-0.5 w-16 h-16 rounded-full -rotate-12 bg-boss-bg border border-boss-code/50 text-boss-code font-display font-bold leading-none">
-                  <span className="text-base">{alum.year}</span>
-                  <span className="text-[9px] tracking-widest">COHORT</span>
+                <span className="absolute -top-4 -left-4 z-10 px-[13px] py-[5px] rounded-md -rotate-12 bg-boss-bg border border-boss-code/50 text-boss-code font-display font-bold text-[21px] leading-none">
+                  {alum.year}
                 </span>
                 <div
                   onClick={() => window.open(alum.github, '_blank')}

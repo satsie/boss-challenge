@@ -1006,16 +1006,28 @@ const BossChallengeLanding = () => {
                               <a href={alum.projectUrl2} target="_blank" rel="noopener noreferrer" className="font-semibold text-boss-text hover:underline whitespace-nowrap" onClick={(e) => e.stopPropagation()}>Channel Jamming Research</a>
                             </>
                           );
-                        } else {
+                        } else if (alum.project) {
+                          // Link a project when it has a URL, otherwise show its name as plain text
+                          const projectLink = (name, url) => url
+                            ? <a href={url} target="_blank" rel="noopener noreferrer" className="font-semibold text-boss-text hover:underline whitespace-nowrap" onClick={(e) => e.stopPropagation()}>{name}</a>
+                            : <span className="font-semibold text-boss-text whitespace-nowrap">{name}</span>;
                           projectContent = (
                             <>
                               Contributing to{' '}
-                              <a href={alum.projectUrl} target="_blank" rel="noopener noreferrer" className="font-semibold text-boss-text hover:underline whitespace-nowrap" onClick={(e) => e.stopPropagation()}>{alum.project}</a>
+                              {projectLink(alum.project, alum.projectUrl)}
+                              {alum.project2 && <>{' and '}{projectLink(alum.project2, alum.projectUrl2)}</>}
                             </>
                           );
                         }
 
-                        return <>{projectContent}.<br />{fundingContent}.</>;
+                        // Alumni whose project or funder isn't known yet show only the line we have
+                        return (
+                          <>
+                            {projectContent && <>{projectContent}.</>}
+                            {projectContent && alum.fundedBy && <br />}
+                            {alum.fundedBy && <>{fundingContent}.</>}
+                          </>
+                        );
                       })()}
                 </p>
               </div>
@@ -1028,6 +1040,19 @@ const BossChallengeLanding = () => {
                 <FadeIn delay={0.1}>
                   <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                     {[
+                      { year: 2026, name: 'Weikeng', image: 'weikeng.png', github: 'https://github.com/weikengchen', fundedBy: 'Spiral', fundedByUrl: 'https://spiral.xyz/', project: 'Bitcoin PIR', projectUrl: 'https://github.com/Bitcoin-PIR/Bitcoin-PIR' },
+                      { year: 2026, name: 'Trevor', image: 'trevor.jpg', github: 'https://github.com/trevarj', fundedBy: 'Spiral', fundedByUrl: 'https://spiral.xyz/', project: 'BHWI', projectUrl: 'https://github.com/wizardsardine/bhwi', project2: 'rust-miniscript', projectUrl2: 'https://github.com/rust-bitcoin/rust-miniscript' },
+                      { year: 2026, name: 'Razor', image: 'razor.jpg', github: 'https://github.com/razorbest', fundedBy: 'OpenSats', fundedByUrl: 'https://opensats.org', project: 'peer-observer', projectUrl:'https://github.com/peer-observer' },
+                      { year: 2026, name: 'Abeeujah', image: 'abeeujah.jpg', github: 'https://github.com/Abeeujah', fundedBy: '₿trust', fundedByUrl: 'https://btrust.tech', project: 'rust-bitcoin', projectUrl: 'https://github.com/rust-bitcoin/rust-bitcoin' },
+                      { year: 2026, name: 'Vadim', image: 'vadim.jpg', github: 'https://github.com/vadim-anfv', fundedBy: 'OpenSats', fundedByUrl: 'https://opensats.org', project: 'BDK', projectUrl: 'https://bitcoindevkit.org/' },
+                      { year: 2026, name: 'su', image: 'su.jpg', github: 'https://github.com/xstoicunicornx', fundedBy: 'Payjoin Foundation', fundedByUrl: 'https://payjoin.org/foundation', project: 'Payjoin', projectUrl: 'https://payjoindevkit.org/' },
+                      { year: 2026, name: 'Yeji', image: 'yeji.jpg', github: 'https://github.com/febyeji', project: 'lean-miniscript', projectUrl: 'https://github.com/febyeji/lean-miniscript' },
+                      { year: 2026, name: 'Peter', image: 'peter.jpg', github: 'https://github.com/pzafonte', project: 'kernel-node', projectUrl: 'https://github.com/kernel-node/kernel-node' },
+                      { year: 2026, name: 'Noah', image: 'noah.png', github: 'https://github.com/noahjoeris', project: 'BDK', projectUrl: 'https://bitcoindevkit.org/' },
+                      { year: 2026, name: 'ek', image: 'ek.jpg', github: 'https://github.com/ekzyis', project: 'smite', projectUrl: 'https://github.com/lnfuzz/smite' },
+                      { year: 2026, name: 'Valera', image: 'valera.png', github: 'https://github.com/valerafinebits', project: 'Payjoin', projectUrl: 'https://github.com/payjoin/rust-payjoin/' },
+                      { year: 2026, name: 'Alexander', image: 'alexander.png', github: 'https://github.com/randomlogin', project: 'LDK', projectUrl: 'https://github.com/lightningdevkit/rust-lightning' },
+                      { year: 2025, name: 'deadmanoz', image: 'deadmanoz.png', github: 'https://github.com/deadmanoz', fundedBy: 'Spiral', fundedByUrl: 'https://spiral.xyz/', project: 'BNOC', projectUrl: 'https://bnoc.xyz/', project2: 'peer-observer', projectUrl2: 'https://github.com/0xB10C/peer-observer' },
                       { year: 2025, name: 'Sangbida', image: 'sangbida.jpg', github: 'https://github.com/sangbida', fundedBy: 'Blockstream', fundedByUrl: 'https://blockstream.com/', project: 'Core Lightning', projectUrl: 'https://github.com/ElementsProject/lightning' },
                       { year: 2025, name: 'Daniel', image: 'daniel.jpg', github: 'https://github.com/purplekarrot', fundedBy: 'Spiral', fundedByUrl: 'https://spiral.xyz', project: 'Bitcoin Core', projectUrl: 'https://github.com/bitcoin/bitcoin' },
                       { year: 2025, name: 'Ben', image: 'ben.jpg', github: 'https://github.com/benalleng', fundedBy: 'Maelstrom', fundedByUrl: 'https://maelstrom.fund/bitcoin-grant-program/', project: 'PayJoin', projectUrl: 'https://github.com/payjoin/rust-payjoin/' },

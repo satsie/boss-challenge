@@ -413,6 +413,25 @@ const heroTopoMask = {
   maskImage: 'linear-gradient(90deg, rgba(0,0,0,.25) 0%, rgba(0,0,0,.25) 30%, #000 70%)',
 };
 
+// White-on-transparent logos in public/img/projects. `h` is the display height in px:
+// icon-only marks run taller than wordmarks so they read at a similar weight.
+const projectLogos = [
+  { name: 'Bitcoin Core', file: 'bitcoin-core.png', width: 817, height: 160, h: 32 },
+  { name: 'Core Lightning', file: 'core-lightning.png', width: 204, height: 76, h: 46 },
+  { name: 'Lightning Dev Kit', file: 'ldk.png', width: 580, height: 160, h: 40 },
+  { name: 'rust-bitcoin', file: 'rust-bitcoin.png', width: 160, height: 160, h: 52 },
+  { name: 'Bitcoin Dev Kit', file: 'bdk.png', width: 584, height: 160, h: 40 },
+  { name: 'Payjoin', file: 'payjoin.png', width: 160, height: 160, h: 48 },
+  { name: 'peer-observer', file: 'peer-observer.png', width: 160, height: 160, h: 56 },
+  { name: 'Silent Payments', file: 'silent-payments.png', width: 119, height: 116, h: 48 },
+];
+
+// Fades the logo strip out at both edges.
+const marqueeEdgeMask = {
+  WebkitMaskImage: 'linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent)',
+  maskImage: 'linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent)',
+};
+
 const Container = ({ className = '', children }) => (
   <div
     className={`mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8 ${className}`}
@@ -587,6 +606,37 @@ const BossChallengeLanding = () => {
         >
           Join the waitlist
         </a>
+      </div>
+    </section>
+
+    {/* Project Logo Strip */}
+    <section aria-labelledby="projects-heading" className="bg-boss-bg border-y border-boss-line py-10 overflow-hidden">
+      <h2 id="projects-heading" className="mb-10 pb-10 border-b border-boss-line px-5 text-center font-ui font-medium not-italic text-[length:clamp(16px,1.8vw,26px)] leading-[1.4] tracking-[0.12em] uppercase text-boss-muted">
+        The proof is in the contributions
+      </h2>
+      <div style={marqueeEdgeMask}>
+        <div className="flex w-max animate-marquee">
+          {[0, 1].map((copy) => (
+            <ul key={copy} aria-hidden={copy === 1} className="flex shrink-0 items-center gap-24 pr-24 md:gap-36 md:pr-36">
+              {projectLogos.map((logo) => (
+                <li key={logo.file} className="shrink-0">
+                  {/* The logo is a mask over a block of colour, so it takes the heading's colour */}
+                  <span
+                    role={copy === 0 ? 'img' : undefined}
+                    aria-label={copy === 0 ? logo.name : undefined}
+                    className="block bg-boss-muted"
+                    style={{
+                      height: logo.h,
+                      width: (logo.h * logo.width) / logo.height,
+                      WebkitMask: `url(${asset(`/img/projects/${logo.file}`)}) center / contain no-repeat`,
+                      mask: `url(${asset(`/img/projects/${logo.file}`)}) center / contain no-repeat`,
+                    }}
+                  />
+                </li>
+              ))}
+            </ul>
+          ))}
+        </div>
       </div>
     </section>
 

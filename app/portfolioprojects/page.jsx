@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { asset } from '../asset';
 
 function Avatar({ username, avatarUrl, size = 44 }) {
   const initial = username.charAt(0).toUpperCase();
@@ -148,8 +149,8 @@ export default function PortfolioProjectsPage() {
         transition={{ duration: 0.5, ease: 'easeOut' }}
       >
         <div className="flex items-center justify-between px-5 sm:px-12 py-5">
-          <Link href="/" className="font-ui font-extrabold text-lg md:text-xl leading-6 md:leading-6 whitespace-nowrap text-boss-text hover:text-boss-muted transition-colors">
-            ₿OSS Challenge
+          <Link href="/" className="block hover:opacity-80 transition-opacity">
+            <img src={asset('/img/chaincode-logomark-yellow.png')} alt="Chaincode" className="h-6 w-auto" />
           </Link>
           <div className="flex items-center gap-5 md:gap-8 text-sm md:text-base text-boss-muted">
             <Link href="/#about" className="hidden sm:inline hover:text-boss-text transition-colors">

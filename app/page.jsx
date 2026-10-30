@@ -524,8 +524,8 @@ const BossChallengeLanding = () => {
         >
           <div className="flex items-center justify-between px-5 sm:px-12 py-5">
             {/* Logo */}
-            <a href="#hero" className="font-ui font-extrabold text-lg md:text-xl leading-6 md:leading-6 whitespace-nowrap text-boss-text hover:text-boss-muted transition-colors">
-              ₿OSS Challenge
+            <a href="#hero" className="block hover:opacity-80 transition-opacity">
+              <img src={asset('/img/chaincode-logomark-yellow.png')} alt="Chaincode" className="h-6 w-auto" />
             </a>
 
             {/* Navigation Links */}
@@ -588,13 +588,11 @@ const BossChallengeLanding = () => {
             className="w-full h-auto"
           />
         </h1>
-        <p className="mt-[clamp(8px,1.5vw,24px)] font-ui font-medium text-[length:clamp(28px,3vw,46px)] leading-[1.12] text-boss-text">
-          Start your career in bitcoin open source
+        <p className="mt-[clamp(8px,1.5vw,24px)] font-ui font-medium text-[length:clamp(20px,2vw,30px)] leading-[1.3] text-boss-text max-w-[29.7em]">
+          Six weeks of challenges. No deadlines. Just you, hard problems, and a chance at a career in bitcoin open-source.
         </p>
         <p className="text-[length:clamp(15px,1.4vw,20px)] leading-[1.6] text-boss-muted">
-          An initiative for coders serious about contributing to bitcoin
-          <br />
-          January 11 - February 19
+          January 11 - February 19, 2027 · Applications open December 1
         </p>
         <a
           id="apply"
@@ -651,8 +649,8 @@ const BossChallengeLanding = () => {
           {/* Section Title */}
           <FadeIn delay={0.05}>
             <div className="text-center mb-16 md:mb-20">
-              <h2 className="text-[length:min(72px,calc((100vw_-_40px)/5.2))] md:text-[96px] lg:text-[120px] leading-[0.95] font-bold not-italic text-boss-bg">
-                ABOUT
+              <h2 className="text-[36px] md:text-[52px] lg:text-[64px] leading-[0.95] font-bold not-italic text-boss-bg">
+                WE&apos;RE LOOKING FOR REALLY GOOD PEOPLE
               </h2>
             </div>
           </FadeIn>
@@ -666,17 +664,20 @@ const BossChallengeLanding = () => {
                 {/* First paragraph with emphasis */}
                 <div className="relative">
                   <p className="font-ui text-base md:text-lg text-boss-bg/70 leading-relaxed">
-                    It&apos;s no secret that getting started in ₿OSS (Bitcoin Open Source Software) can be difficult. Sometimes it&apos;s not obvious where to begin, and other times it takes an extra nudge. No matter the situation, the <span className="font-semibold text-boss-bg">₿OSS Challenge is ready to tackle obstacles</span> like these by providing guidance and scaffolding for the journey.
+                    There's never been anything like bitcoin. For the first time in history we have open, censorship-resistant money that cannot be controlled or debased. Today, the bitcoin network secures over a trillion dollars. For something so important you'd expect an army of engineers building and maintaining it. In reality, that group is far smaller than you'd expect.
+                  </p>
+                  <br />
+                  <p className="font-ui text-base md:text-lg text-boss-bg/70 leading-relaxed">
+                    Part of why there aren't more bitcoin developers is that breaking into ₿OSS (Bitcoin Open Source Software) can be hard. With no hiring pipeline or onboarding process, many find it difficult to know where to start. Even if you have that part figured out, standards are high and it can be a long, lonely journey alone.
                   </p>
                 </div>
 
                 {/* Divider */}
                 <div className="w-16 h-1 bg-boss-accent"></div>
 
-                {/* Second paragraph */}
                 <div className="relative">
                   <p className="font-ui text-base md:text-lg text-boss-bg/70 leading-relaxed">
-                    At the heart of the challenge is a set of <span className="font-semibold text-boss-bg">programming exercises and hands-on activities</span> spanning the course of a month. Once that month is complete, participants that are ready to continue the adventure have the opportunity to <span className="font-semibold text-boss-bg">extend the program for two additional months</span>.
+                    The ₿OSS Challenge exists to change that. It provides the light scaffolding and peer support needed to establish a meaningful track record. Participants can then rise above the noise, separate their work from the crowd, and show the world what they've got.
                   </p>
                 </div>
 
@@ -731,11 +732,11 @@ const BossChallengeLanding = () => {
         <div className="max-w-7xl mx-auto">
           <FadeIn delay={0.05}>
             <div className="text-center mb-12 md:mb-16">
-              <h2 className="text-[length:min(72px,calc((100vw_-_40px)/5.2))] md:text-[96px] lg:text-[120px] leading-[0.95] font-bold not-italic text-boss-text mb-4">
+              <h2 className="text-[length:min(60px,calc((100vw_-_40px)/6.2))] md:text-[80px] lg:text-[100px] leading-[0.95] font-bold not-italic text-boss-text mb-4">
                 HOW IT WORKS
               </h2>
               <p className="text-lg md:text-xl text-boss-muted max-w-3xl mx-auto">
-                A structured 3-month journey from learning to contributing
+                Six weeks of challenges, at your own pace
               </p>
             </div>
           </FadeIn>
@@ -758,7 +759,7 @@ const BossChallengeLanding = () => {
                 
                 {/* Title */}
                 <h3 className="text-2xl font-bold text-boss-text mb-2">
-                  Month One
+                  Apply
                 </h3>
                 
                 {/* Subtitle */}
@@ -766,13 +767,12 @@ const BossChallengeLanding = () => {
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                   </svg>
-                  Foundation & Core Learning
+                  December 1 - 31, 2026
                 </div>
 
                 {/* Description */}
                 <p className="font-ui text-base text-boss-muted leading-relaxed">
-                  {/* Chaincode curates each cohort, arranges curriculum, and provides ongoing support. Expect to prep for <strong className="text-boss-text font-semibold">minimum 10 hours per week</strong>. Taught and mentored by ₿OSS contributors with async chat discussions and support throughout. */}
-                  Chaincode curates each cohort, arranges curriculum, and provides ongoing support throughout the program. You will be expected to prep for a  <strong className="text-boss-text font-semibold">minimum 10 hours per week</strong>. Outside of the first week, there are no scheduled calls. This program will be taught and mentored by ₿OSS contributors that have stood in your shoes. Throughout the week, there will be async chat discussions and support. If you are willing to do the work, we&apos;ll give you what you need to get to where you want to go.
+                  Apply for the BOSS Challenge: Tell us who you are and why bitcoin. Talk to us about what interests you. Share something you're proud to have built. Once you complete the application you'll be provided with an admissions test to work on. Complete this before the program begins in January.
                 </p>
               </div>
             </FadeIn>
@@ -814,7 +814,7 @@ const BossChallengeLanding = () => {
                 
                 {/* Title */}
                 <h3 className="text-2xl font-bold text-boss-text mb-2">
-                  Months 2 & 3
+                  Show up
                 </h3>
                 
                 {/* Subtitle */}
@@ -822,12 +822,12 @@ const BossChallengeLanding = () => {
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                   </svg>
-                  Advanced Programs & Partnerships
+                  6 weeks of challenges
                 </div>
 
                 {/* Description */}
                 <p className="font-ui text-base text-boss-muted leading-relaxed">
-                  You will have the opportunity to participate in a program with a partner organization. Chaincode will also run a seminar and provide a list of supplemental resources. Advanced participants may be selected for additional opportunities.
+                  Expect to spend a minimum of 10 hours per week on the challenges. Outside of the first week, there are no scheduled calls. There are also no deadlines or green check marks. Just do your best and work through the challenges at your own pace. Async discussion and support will be available from ₿OSS contributors that have stood in your shoes.
                 </p>
               </div>
             </FadeIn>
@@ -860,7 +860,10 @@ const BossChallengeLanding = () => {
 
                 {/* Description */}
                 <p className="font-ui text-base text-boss-muted leading-relaxed">
-                  The journey to becoming a <strong className="text-boss-text font-semibold">full-time ₿OSS contributor</strong> is long, winding, and different for everybody. It is not a straight path. This challenge is not only designed to give you some supports along the way, but to foster the proactive, self-starter spirit that is required in open source. Join the challenge and see how far you can go!
+                  The journey to becoming a <strong className="text-boss-text font-semibold">full-time ₿OSS contributor</strong> is long, winding, and different for everybody. It is not a straight path. This challenge is not only designed to give you some supports along the way, but to foster the proactive, self-starter spirit that is required in open source.
+                  <br />
+                  <br />
+                  Participants that stood out during the challenges are invited to have a call with Chaincode Labs to help plan their career in bitcoin open-source. Options for continuing education will be available to all.
                 </p>
               </div>
             </FadeIn>
@@ -892,7 +895,7 @@ const BossChallengeLanding = () => {
           <FadeIn delay={0.05}>
             <div className="text-center mb-16 md:mb-20">
 
-              <h2 className="text-[length:min(72px,calc((100vw_-_40px)/5.2))] md:text-[96px] lg:text-[120px] leading-[0.95] font-bold not-italic text-boss-bg mb-4">
+              <h2 className="text-[length:min(60px,calc((100vw_-_40px)/6.2))] md:text-[80px] lg:text-[100px] leading-[0.95] font-bold not-italic text-boss-bg mb-4">
                 TESTIMONIALS
               </h2>
               <p className="text-lg md:text-xl text-boss-bg/70 max-w-2xl mx-auto">
@@ -916,7 +919,7 @@ const BossChallengeLanding = () => {
           {/* Main Section Heading */}
           <FadeIn delay={0.05}>
             <div className="text-center mb-20">
-              <h2 className="text-[length:min(72px,calc((100vw_-_40px)/5.2))] md:text-[96px] lg:text-[120px] leading-[0.95] font-bold not-italic text-boss-text mb-4">
+              <h2 className="text-[length:min(60px,calc((100vw_-_40px)/6.2))] md:text-[80px] lg:text-[100px] leading-[0.95] font-bold not-italic text-boss-text mb-4">
                 <BitcoinB />OSS ALUMNI
             </h2>
               <p className="text-lg md:text-xl text-boss-muted max-w-2xl mx-auto">
@@ -1138,7 +1141,7 @@ const BossChallengeLanding = () => {
         <div className="max-w-7xl mx-auto relative z-[1]">
           <FadeIn delay={0.05}>
             <div className="text-center mb-20">
-              <h2 className="text-[length:min(72px,calc((100vw_-_40px)/5.2))] md:text-[96px] lg:text-[120px] leading-[0.95] font-bold not-italic text-boss-bg mb-4">
+              <h2 className="text-[length:min(60px,calc((100vw_-_40px)/6.2))] md:text-[80px] lg:text-[100px] leading-[0.95] font-bold not-italic text-boss-bg mb-4">
                 LEARNING RESOURCES
               </h2>
               <p className="text-xl text-boss-bg/70">
@@ -1230,7 +1233,7 @@ const BossChallengeLanding = () => {
         <div className="max-w-7xl mx-auto relative z-[1]">
           <FadeIn delay={0.05}>
             <div className="text-center mb-20">
-              <h2 className="text-[length:min(72px,calc((100vw_-_40px)/5.2))] md:text-[96px] lg:text-[120px] leading-[0.95] font-bold not-italic text-boss-bg mb-6">
+              <h2 className="text-[length:min(60px,calc((100vw_-_40px)/6.2))] md:text-[80px] lg:text-[100px] leading-[0.95] font-bold not-italic text-boss-bg mb-6">
               ABOUT CHAINCODE
             </h2>
               <div className="w-24 h-px bg-gradient-to-r from-transparent via-boss-bg/30 to-transparent mx-auto"></div>

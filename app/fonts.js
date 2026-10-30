@@ -13,6 +13,7 @@ export const barlowCondensed = Barlow_Condensed({
 export const archivo = Archivo({
   subsets: ['latin'],
   weight: ['400', '500', '600', '800'],
+  style: ['normal', 'italic'],
   variable: '--font-archivo',
   display: 'swap',
 });
